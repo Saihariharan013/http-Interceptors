@@ -1,0 +1,16 @@
+
+
+<ng-container *ngIf="(loading!.loading | async)!.length > 0">
+  <img src="https://c.tenor.com/dO5CaXHvGgAAAAAM/loading-100.gif" alt="loading">
+</ng-container>
+<br>
+
+<button (click)="getData()">getData</button>
+
+<button (click)="status(200)">status200</button>
+<button (click)="status(401)">status401</button>
+<button (click)="status(500)">status500</button>
+
+<button (click)="getData(); status(200); status(401); status(500)">Call multi request - Test loading</button>
+
+<pre>{{data | json}}</pre>
